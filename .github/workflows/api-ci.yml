@@ -4,6 +4,7 @@ name: API CI
 on:
   push:
     paths:
+      - "./**"
       - "./api/**"
       - "./.github/workflows/api-ci.yml"
 
