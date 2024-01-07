@@ -6,6 +6,7 @@ on:
     paths:
       - "./api/**"
       - ".github/workflows/api-ci.yml"
+      - "package.json"
 
 
 defaults:
@@ -17,11 +18,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Nodejs
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 18
           cache: 'npm'
           cache-dependency-path: ./api/package-lock.json
       - name: install
@@ -34,11 +35,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup Nodejs
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 18
           cache: 'npm'
           cache-dependency-path: ./api/package-lock.json
       - name: install
@@ -50,7 +51,7 @@ jobs:
   e2e:
     runs-on: ubuntu-latest
     container:
-      image: node:14
+      image: node:18
 
     services:
       mongo-e2e:
@@ -63,7 +64,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: install
         shell: bash
         run: npm ci
