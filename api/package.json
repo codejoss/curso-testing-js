@@ -10,7 +10,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "test:e2e": "jest --config ./e2e/jest-e2e.json --forceExit",
+    "test:e2e": "jest --config ./e2e/jest-e2e.json --detectOpenHandles --forceExit",
     "lint": "eslint src/**",
     "lint:fix": "eslint src/** --fix"
   },
